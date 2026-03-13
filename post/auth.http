@@ -1,0 +1,36 @@
+@baseUrl = http://localhost:3000/api/v1/auth
+@contentType = application/json
+@token = eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YjNiYzA4OGU1YjljZTU5OTcwYTEzNyIsImlhdCI6MTc3MzM4Njc3NywiZXhwIjoxNzc1OTc4Nzc3fQ.3-42zo34UwG8X1Tnjuta4j88CSA2AM1G7W-0NvnngT1fwkfamtQmQiEBeW4V6VHSVscnyd6XWbt9DmeJaHgiOUN0qEAOZzYXZ2vnAn5XG6GNBM_c5EjVvFqY_hw0SL7EDP1FlEDiCkOCG5LkwZZxnSV9J0tXeApDPYEUZRiyMH6uGJFSw9cvEOABJo5HbMkC_e5Yu372uv8b1Zh53zk61R8doY1o-CCq2KN_172qk2KJGW-41obvHBDKAdcXlaT7NSRZNBU21uq7WC40hLhqfHDdkytSB5UswIFvVENk6myrbblDFE9eZWkwlVJA2LSP-K_Rm5NoEkfH08mStGPlCw
+
+### Register (optional)
+POST {{baseUrl}}/register
+Content-Type: {{contentType}}
+
+{
+  "email": "user02@example.com",
+  "username": "user02",
+  "password": "Aa@123456"
+}
+
+### Login
+POST {{baseUrl}}/login
+Content-Type: {{contentType}}
+
+{
+  "username": "user02",
+  "password": "Aa@123456"
+}
+
+### /me
+GET {{baseUrl}}/me
+Authorization: Bearer {{token}}
+
+### Change Password
+PATCH {{baseUrl}}/changepassword
+Content-Type: {{contentType}}
+Authorization: Bearer {{token}}
+
+{
+  "oldpassword": "Aa@123456",
+  "newpassword": "Bb@123456"
+}
