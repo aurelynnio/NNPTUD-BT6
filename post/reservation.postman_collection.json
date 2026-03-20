@@ -1,0 +1,48 @@
+{
+  "info": {
+    "_postman_id": "b7f1a9ab-40e5-4ac7-9438-a8f9a2890006",
+    "name": "Reservation",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Reservation",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"product\": \"{{productId}}\",\n  \"quantity\": 3\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/inventories/reservation",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "inventories",
+            "reservation"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000"
+    },
+    {
+      "key": "productId",
+      "value": "PUT_PRODUCT_ID_HERE"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <rect width="1200" height="675" fill="#edf5f1"/>
+  <rect x="40" y="40" width="1120" height="595" rx="24" fill="#ffffff" stroke="#bfd7cb" stroke-width="3"/>
+  <text x="80" y="105" fill="#1f5d49" font-size="34" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Get All Inventories</text>
+  <text x="80" y="150" fill="#444444" font-size="22" font-family="Consolas, monospace">GET /api/v1/inventories</text>
+  <rect x="80" y="190" width="430" height="340" rx="16" fill="#f4faf7" stroke="#cfe5db"/>
+  <text x="105" y="235" fill="#1f5d49" font-size="24" font-family="Segoe UI, Arial, sans-serif" font-weight="700">What this API returns</text>
+  <text x="105" y="285" fill="#333333" font-size="20" font-family="Consolas, monospace">[</text>
+  <text x="125" y="320" fill="#333333" font-size="20" font-family="Consolas, monospace">{ "_id": "...", "stock": 7,</text>
+  <text x="145" y="355" fill="#333333" font-size="20" font-family="Consolas, monospace">"reserved": 2, "soldCount": 1,</text>
+  <text x="145" y="390" fill="#333333" font-size="20" font-family="Consolas, monospace">"product": { "title": "...",</text>
+  <text x="165" y="425" fill="#333333" font-size="20" font-family="Consolas, monospace">"category": { "name": "..." } }</text>
+  <text x="125" y="460" fill="#333333" font-size="20" font-family="Consolas, monospace">}</text>
+  <text x="105" y="495" fill="#333333" font-size="20" font-family="Consolas, monospace">]</text>
+  <rect x="560" y="190" width="550" height="340" rx="16" fill="#eef8f4" stroke="#cfe5db"/>
+  <text x="585" y="235" fill="#1f5d49" font-size="24" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Join with Product</text>
+  <text x="585" y="285" fill="#333333" font-size="20" font-family="Consolas, monospace">populate("product")</text>
+  <text x="585" y="325" fill="#333333" font-size="20" font-family="Consolas, monospace">populate("product.category", "name images")</text>
+  <text x="585" y="385" fill="#333333" font-size="20" font-family="Segoe UI, Arial, sans-serif">Only inventories whose product is not soft-deleted are returned.</text>
+  <text x="80" y="600" fill="#666666" font-size="18" font-family="Segoe UI, Arial, sans-serif">Use this image in the report section that proves list inventory API is working.</text>
+</svg>

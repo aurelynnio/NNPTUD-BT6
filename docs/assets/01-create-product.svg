@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <rect width="1200" height="675" fill="#f4efe7"/>
+  <rect x="40" y="40" width="1120" height="595" rx="24" fill="#ffffff" stroke="#d4c6b8" stroke-width="3"/>
+  <text x="80" y="105" fill="#7a3b1d" font-size="34" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Create Product and Auto Create Inventory</text>
+  <text x="80" y="150" fill="#444444" font-size="22" font-family="Consolas, monospace">POST /api/v1/products</text>
+  <rect x="80" y="190" width="480" height="360" rx="16" fill="#f8f5f1" stroke="#d9d0c5"/>
+  <text x="105" y="230" fill="#222222" font-size="24" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Request Body</text>
+  <text x="105" y="275" fill="#333333" font-size="20" font-family="Consolas, monospace">{</text>
+  <text x="125" y="310" fill="#333333" font-size="20" font-family="Consolas, monospace">"title": "Ao thun basic 2026",</text>
+  <text x="125" y="345" fill="#333333" font-size="20" font-family="Consolas, monospace">"price": 120000,</text>
+  <text x="125" y="380" fill="#333333" font-size="20" font-family="Consolas, monospace">"description": "San pham test",</text>
+  <text x="125" y="415" fill="#333333" font-size="20" font-family="Consolas, monospace">"categoryId": "YOUR_CATEGORY_ID",</text>
+  <text x="125" y="450" fill="#333333" font-size="20" font-family="Consolas, monospace">"images": ["https://...default_product.png"]</text>
+  <text x="105" y="485" fill="#333333" font-size="20" font-family="Consolas, monospace">}</text>
+  <rect x="610" y="190" width="500" height="360" rx="16" fill="#fff7f2" stroke="#e3c3a9"/>
+  <text x="635" y="230" fill="#7a3b1d" font-size="24" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Expected Result</text>
+  <text x="635" y="275" fill="#333333" font-size="20" font-family="Consolas, monospace">201/200 response returns created product.</text>
+  <text x="635" y="320" fill="#333333" font-size="20" font-family="Consolas, monospace">A new inventory is created automatically:</text>
+  <text x="655" y="360" fill="#333333" font-size="20" font-family="Consolas, monospace">stock = 0</text>
+  <text x="655" y="395" fill="#333333" font-size="20" font-family="Consolas, monospace">reserved = 0</text>
+  <text x="655" y="430" fill="#333333" font-size="20" font-family="Consolas, monospace">soldCount = 0</text>
+  <text x="635" y="485" fill="#333333" font-size="20" font-family="Consolas, monospace">Use the created product _id for stock APIs.</text>
+  <text x="80" y="600" fill="#666666" font-size="18" font-family="Segoe UI, Arial, sans-serif">Illustration for report. Replace with real Postman screenshot if your lecturer requires GUI evidence.</text>
+</svg>

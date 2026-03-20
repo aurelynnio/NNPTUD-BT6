@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <rect width="1200" height="675" fill="#f0f7ea"/>
+  <rect x="40" y="40" width="1120" height="595" rx="24" fill="#ffffff" stroke="#c9d9b7" stroke-width="3"/>
+  <text x="80" y="105" fill="#4e7a21" font-size="34" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Add Stock</text>
+  <text x="80" y="150" fill="#444444" font-size="22" font-family="Consolas, monospace">POST /api/v1/inventories/add-stock</text>
+  <rect x="80" y="190" width="470" height="320" rx="16" fill="#f7fbf3" stroke="#dce8d2"/>
+  <text x="105" y="235" fill="#4e7a21" font-size="24" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Request Body</text>
+  <text x="105" y="285" fill="#333333" font-size="20" font-family="Consolas, monospace">{ "product": "PRODUCT_ID", "quantity": 10 }</text>
+  <text x="105" y="345" fill="#333333" font-size="20" font-family="Segoe UI, Arial, sans-serif">Validation: product must exist and quantity must be &gt; 0.</text>
+  <rect x="590" y="190" width="520" height="320" rx="16" fill="#f7fbf3" stroke="#dce8d2"/>
+  <text x="615" y="235" fill="#4e7a21" font-size="24" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Inventory Update</text>
+  <text x="615" y="285" fill="#333333" font-size="20" font-family="Consolas, monospace">stock = stock + quantity</text>
+  <text x="615" y="335" fill="#333333" font-size="20" font-family="Consolas, monospace">reserved = unchanged</text>
+  <text x="615" y="385" fill="#333333" font-size="20" font-family="Consolas, monospace">soldCount = unchanged</text>
+  <text x="80" y="600" fill="#666666" font-size="18" font-family="Segoe UI, Arial, sans-serif">Use after creating product so inventory starts from 0 and visibly increases.</text>
+</svg>

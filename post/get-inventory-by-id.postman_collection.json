@@ -1,0 +1,39 @@
+{
+  "info": {
+    "_postman_id": "b7f1a9ab-40e5-4ac7-9438-a8f9a2890003",
+    "name": "Get Inventory By ID",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get Inventory By ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/inventories/{{inventoryId}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "inventories",
+            "{{inventoryId}}"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000"
+    },
+    {
+      "key": "inventoryId",
+      "value": "PUT_INVENTORY_ID_HERE"
+    }
+  ]
+}

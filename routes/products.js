@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 let slugify = require('slugify')
 let productSchema = require('../schemas/products')
+let inventorySchema = require('../schemas/inventories')
 //mongoose --- mongoDB
 
 /* GET users listing. */
@@ -38,7 +39,7 @@ router.get('/slug/:slug', async function (req, res, next) {
 router.get('/:id', async function (req, res, next) {
   try {
     let result = await productSchema.findOne(
-      { _id: req.params.id && isDeleted }
+      { _id: req.params.id, isDeleted: false }
     );
     if (result) {
       res.status(200).send(result)
@@ -66,6 +67,14 @@ router.post('/', async function (req, res, next) {
       images: req.body.images
     })
     await newObj.save()
+    try {
+      await new inventorySchema({
+        product: newObj._id
+      }).save()
+    } catch (inventoryError) {
+      await productSchema.findByIdAndDelete(newObj._id)
+      throw inventoryError
+    }
     res.send(newObj);
   } catch (error) {
     res.status(404).send(error.message);

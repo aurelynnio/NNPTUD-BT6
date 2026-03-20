@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <rect width="1200" height="675" fill="#f3eef8"/>
+  <rect x="40" y="40" width="1120" height="595" rx="24" fill="#ffffff" stroke="#d2c4e3" stroke-width="3"/>
+  <text x="80" y="105" fill="#5b3a88" font-size="34" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Sold</text>
+  <text x="80" y="150" fill="#444444" font-size="22" font-family="Consolas, monospace">POST /api/v1/inventories/sold</text>
+  <rect x="80" y="190" width="470" height="320" rx="16" fill="#faf7fd" stroke="#e0d8ec"/>
+  <text x="105" y="235" fill="#5b3a88" font-size="24" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Request Body</text>
+  <text x="105" y="285" fill="#333333" font-size="20" font-family="Consolas, monospace">{ "product": "PRODUCT_ID", "quantity": 1 }</text>
+  <rect x="590" y="190" width="520" height="320" rx="16" fill="#faf7fd" stroke="#e0d8ec"/>
+  <text x="615" y="235" fill="#5b3a88" font-size="24" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Inventory Update</text>
+  <text x="615" y="285" fill="#333333" font-size="20" font-family="Consolas, monospace">reserved = reserved - quantity</text>
+  <text x="615" y="335" fill="#333333" font-size="20" font-family="Consolas, monospace">soldCount = soldCount + quantity</text>
+  <text x="615" y="385" fill="#333333" font-size="20" font-family="Consolas, monospace">stock = unchanged</text>
+  <text x="615" y="435" fill="#333333" font-size="20" font-family="Consolas, monospace">If reserved is not enough =&gt; 400 error</text>
+  <text x="80" y="600" fill="#666666" font-size="18" font-family="Segoe UI, Arial, sans-serif">Run this after reservation so the state change is easy to observe in inventory detail.</text>
+</svg>

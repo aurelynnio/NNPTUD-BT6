@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <rect width="1200" height="675" fill="#eef2f8"/>
+  <rect x="40" y="40" width="1120" height="595" rx="24" fill="#ffffff" stroke="#c9d3e5" stroke-width="3"/>
+  <text x="80" y="105" fill="#244b82" font-size="34" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Get Inventory By ID</text>
+  <text x="80" y="150" fill="#444444" font-size="22" font-family="Consolas, monospace">GET /api/v1/inventories/:id</text>
+  <rect x="80" y="190" width="480" height="320" rx="16" fill="#f5f8fd" stroke="#dbe4f1"/>
+  <text x="105" y="235" fill="#244b82" font-size="24" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Path Variable</text>
+  <text x="105" y="285" fill="#333333" font-size="20" font-family="Consolas, monospace">inventoryId = 67df....</text>
+  <text x="105" y="345" fill="#333333" font-size="20" font-family="Segoe UI, Arial, sans-serif">Returns one inventory document with populated product and category.</text>
+  <rect x="610" y="190" width="500" height="320" rx="16" fill="#f7f9fc" stroke="#dbe4f1"/>
+  <text x="635" y="235" fill="#244b82" font-size="24" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Response Highlights</text>
+  <text x="635" y="285" fill="#333333" font-size="20" font-family="Consolas, monospace">"_id": "inventoryId"</text>
+  <text x="635" y="320" fill="#333333" font-size="20" font-family="Consolas, monospace">"stock": number</text>
+  <text x="635" y="355" fill="#333333" font-size="20" font-family="Consolas, monospace">"reserved": number</text>
+  <text x="635" y="390" fill="#333333" font-size="20" font-family="Consolas, monospace">"soldCount": number</text>
+  <text x="635" y="425" fill="#333333" font-size="20" font-family="Consolas, monospace">"product": { "title": "...", "category": ... }</text>
+  <text x="80" y="600" fill="#666666" font-size="18" font-family="Segoe UI, Arial, sans-serif">If the ID is invalid or not found, API returns 404 with message "INVENTORY NOT FOUND".</text>
+</svg>

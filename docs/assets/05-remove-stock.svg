@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <rect width="1200" height="675" fill="#f8f1ea"/>
+  <rect x="40" y="40" width="1120" height="595" rx="24" fill="#ffffff" stroke="#e0cab6" stroke-width="3"/>
+  <text x="80" y="105" fill="#8a4d17" font-size="34" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Remove Stock</text>
+  <text x="80" y="150" fill="#444444" font-size="22" font-family="Consolas, monospace">POST /api/v1/inventories/remove-stock</text>
+  <rect x="80" y="190" width="470" height="320" rx="16" fill="#fff8f2" stroke="#eedbc9"/>
+  <text x="105" y="235" fill="#8a4d17" font-size="24" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Request Body</text>
+  <text x="105" y="285" fill="#333333" font-size="20" font-family="Consolas, monospace">{ "product": "PRODUCT_ID", "quantity": 2 }</text>
+  <rect x="590" y="190" width="520" height="320" rx="16" fill="#fff8f2" stroke="#eedbc9"/>
+  <text x="615" y="235" fill="#8a4d17" font-size="24" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Business Rule</text>
+  <text x="615" y="285" fill="#333333" font-size="20" font-family="Consolas, monospace">Only remove when stock &gt;= quantity</text>
+  <text x="615" y="335" fill="#333333" font-size="20" font-family="Consolas, monospace">stock = stock - quantity</text>
+  <text x="615" y="385" fill="#333333" font-size="20" font-family="Consolas, monospace">If not enough stock =&gt; 400 "STOCK IS NOT ENOUGH"</text>
+  <text x="80" y="600" fill="#666666" font-size="18" font-family="Segoe UI, Arial, sans-serif">This API helps test manual stock reduction without touching reserved or soldCount.</text>
+</svg>

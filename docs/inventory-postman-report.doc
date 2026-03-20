@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Inventory API Report</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      margin: 36px;
+      color: #222;
+      line-height: 1.5;
+    }
+    h1, h2 {
+      color: #7a3b1d;
+    }
+    .note {
+      padding: 14px 16px;
+      background: #fff3e8;
+      border-left: 5px solid #c56b2d;
+      margin: 18px 0 28px 0;
+    }
+    .section {
+      page-break-inside: avoid;
+      margin-bottom: 28px;
+    }
+    img {
+      width: 100%;
+      max-width: 900px;
+      border: 1px solid #ddd;
+      display: block;
+      margin-top: 10px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+    }
+    th, td {
+      border: 1px solid #d8d8d8;
+      padding: 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: #f7f7f7;
+    }
+    code {
+      font-family: Consolas, monospace;
+      background: #f3f3f3;
+      padding: 2px 4px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Bao Cao Chuc Nang Inventory API</h1>
+  <p>Du an: <b>NNPTUD-BT6</b></p>
+  <p>Noi dung bao gom ma nguon Inventory, cac file Postman import duoc, va tai lieu minh hoa cac chuc nang can test.</p>
+
+  <div class="note">
+    <b>Luu y:</b> Moi truong CLI nay khong mo duoc Postman GUI de chup man hinh thuc te.
+    Tai lieu nay da chuan bi san bo cuc Word-compatible va cac anh minh hoa cho tung API.
+    Neu giang vien yeu cau dung anh chup Postman that, hay mo cac file JSON trong thu muc <code>post/</code>, run request trong Postman, sau do thay cac anh minh hoa bang screenshot thuc te.
+  </div>
+
+  <h2>1. Danh sach API da lam</h2>
+  <table>
+    <tr>
+      <th>Chuc nang</th>
+      <th>Method</th>
+      <th>Endpoint</th>
+    </tr>
+    <tr><td>Tao product va tu dong tao inventory</td><td>POST</td><td>/api/v1/products</td></tr>
+    <tr><td>Lay danh sach inventory co join product</td><td>GET</td><td>/api/v1/inventories</td></tr>
+    <tr><td>Lay inventory theo ID co join product</td><td>GET</td><td>/api/v1/inventories/:id</td></tr>
+    <tr><td>Tang stock</td><td>POST</td><td>/api/v1/inventories/add-stock</td></tr>
+    <tr><td>Giam stock</td><td>POST</td><td>/api/v1/inventories/remove-stock</td></tr>
+    <tr><td>Reservation</td><td>POST</td><td>/api/v1/inventories/reservation</td></tr>
+    <tr><td>Sold</td><td>POST</td><td>/api/v1/inventories/sold</td></tr>
+  </table>
+
+  <div class="section">
+    <h2>2. Minh hoa tao product va tu dong tao inventory</h2>
+    <p>Import file <code>post/create-product-auto-inventory.postman_collection.json</code> vao Postman, dien <code>categoryId</code> hop le va send request.</p>
+    <img src="assets/01-create-product.svg" alt="Create product" />
+  </div>
+
+  <div class="section">
+    <h2>3. Minh hoa get all inventories</h2>
+    <p>Import file <code>post/get-all-inventories.postman_collection.json</code> va send request.</p>
+    <img src="assets/02-get-all-inventories.svg" alt="Get all inventories" />
+  </div>
+
+  <div class="section">
+    <h2>4. Minh hoa get inventory by ID</h2>
+    <p>Import file <code>post/get-inventory-by-id.postman_collection.json</code>, dien <code>inventoryId</code> thuc te, sau do send request.</p>
+    <img src="assets/03-get-inventory-by-id.svg" alt="Get inventory by id" />
+  </div>
+
+  <div class="section">
+    <h2>5. Minh hoa add stock</h2>
+    <p>Import file <code>post/add-stock.postman_collection.json</code>, dien <code>productId</code> va send request.</p>
+    <img src="assets/04-add-stock.svg" alt="Add stock" />
+  </div>
+
+  <div class="section">
+    <h2>6. Minh hoa remove stock</h2>
+    <p>Import file <code>post/remove-stock.postman_collection.json</code>, dien <code>productId</code> va send request.</p>
+    <img src="assets/05-remove-stock.svg" alt="Remove stock" />
+  </div>
+
+  <div class="section">
+    <h2>7. Minh hoa reservation</h2>
+    <p>Import file <code>post/reservation.postman_collection.json</code>, dien <code>productId</code> va send request.</p>
+    <img src="assets/06-reservation.svg" alt="Reservation" />
+  </div>
+
+  <div class="section">
+    <h2>8. Minh hoa sold</h2>
+    <p>Import file <code>post/sold.postman_collection.json</code>, dien <code>productId</code> va send request.</p>
+    <img src="assets/07-sold.svg" alt="Sold" />
+  </div>
+
+  <div class="section">
+    <h2>9. Thu tu test de nhin ro bien dong du lieu</h2>
+    <p>1) Tao product, 2) add stock, 3) reservation, 4) sold, 5) get inventory by ID.</p>
+    <p>Du lieu ky vong: <code>stock</code> giam dan, <code>reserved</code> tang roi giam, <code>soldCount</code> tang sau khi goi API sold.</p>
+  </div>
+</body>
+</html>
