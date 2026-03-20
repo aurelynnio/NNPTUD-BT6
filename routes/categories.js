@@ -31,7 +31,7 @@ router.get('/slug/:slug', async function (req, res, next) {
 router.get('/:id', async function (req, res, next) {
   try {
     let result = await categorySchema.findOne(
-      { _id: req.params.id && isDeleted }
+      { _id: req.params.id, isDeleted: false }
     );
     if (result) {
       res.status(200).send(result)
@@ -48,9 +48,15 @@ router.get('/:id', async function (req, res, next) {
 });
 router.post('/', async function (req, res, next) {
   try {
+    if (typeof req.body.name !== 'string' || !req.body.name.trim()) {
+      return res.status(400).send({
+        message: 'NAME IS REQUIRED'
+      })
+    }
+
     let newObj = new categorySchema({
-      name: req.body.name,
-      slug: slugify(req.body.name, {
+      name: req.body.name.trim(),
+      slug: slugify(req.body.name.trim(), {
         replacement: '-', lower: true, locale: 'vi',
       }),
       description: req.body.description,
@@ -59,7 +65,7 @@ router.post('/', async function (req, res, next) {
     await newObj.save()
     res.send(newObj);
   } catch (error) {
-    res.status(404).send(error.message);
+    res.status(400).send(error.message);
   }
 })
 router.put('/:id', async function (req, res, next) {

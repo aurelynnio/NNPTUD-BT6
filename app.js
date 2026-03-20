@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 var createError = require("http-errors");
 var express = require("express");
 var path = require("path");
@@ -22,14 +24,22 @@ app.use(express.static(path.join(__dirname, "public")));
 //domain:port/api/v1/categories
 //domain:port/api/v1/roles
 
-const mongoUri = process.env.MONGODB_URI;
+const mongoUri =
+  process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/nnptud-bt6";
 
-mongoose.connect(mongoUri);
+mongoose
+  .connect(mongoUri)
+  .catch(function (error) {
+    console.error("MongoDB connection error:", error.message);
+  });
 mongoose.connection.on("connected", function () {
   console.log("connected");
 });
 mongoose.connection.on("disconnected", function () {
   console.log("disconnected");
+});
+mongoose.connection.on("error", function (error) {
+  console.log("MongoDB error:", error.message);
 });
 
 app.use("/", require("./routes/index"));

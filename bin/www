@@ -69,6 +69,13 @@ function onError(error) {
       process.exit(1);
       break;
     case 'EADDRINUSE':
+      if (typeof port === 'number') {
+        port += 1;
+        app.set('port', port);
+        console.error(bind + ' is already in use, retrying on port ' + port);
+        server.listen(port);
+        break;
+      }
       console.error(bind + ' is already in use');
       process.exit(1);
       break;
@@ -87,4 +94,5 @@ function onListening() {
     ? 'pipe ' + addr
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
+  console.log('Server listening on ' + bind);
 }

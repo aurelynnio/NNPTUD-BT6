@@ -56,9 +56,15 @@ router.get('/:id', async function (req, res, next) {
 });
 router.post('/', async function (req, res, next) {
   try {
+    if (typeof req.body.title !== 'string' || !req.body.title.trim()) {
+      return res.status(400).send({
+        message: 'TITLE IS REQUIRED'
+      })
+    }
+
     let newObj = new productSchema({
-      title: req.body.title,
-      slug: slugify(req.body.title, {
+      title: req.body.title.trim(),
+      slug: slugify(req.body.title.trim(), {
         replacement: '-', lower: true, locale: 'vi',
       }),
       price: req.body.price,
@@ -77,7 +83,7 @@ router.post('/', async function (req, res, next) {
     }
     res.send(newObj);
   } catch (error) {
-    res.status(404).send(error.message);
+    res.status(400).send(error.message);
   }
 })
 router.put('/:id', async function (req, res, next) {
